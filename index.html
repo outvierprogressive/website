@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progressive Adjustment Sdn. Bhd. (PASB) - Insurance Loss Adjusters & Private Investigators</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Strict Corporate Identity Design Tokens */
+        :root {
+            --primary-red: #D32F2F;
+            --primary-red-dark: #B71C1C;
+            --primary-red-light: #FFEBEE;
+            --primary-blue: #0D233A;
+            --secondary-blue: #1E3A8A;
+            --accent-blue: #2563EB;
+            --bg-light: #F8FAFC;
+            --text-dark: #0F172A;
+            --text-muted: #475569;
+            --white: #FFFFFF;
+            --border-color: #E2E8F0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        /* Color Utility Classes */
+        .bg-primary-blue { background-color: var(--primary-blue); }
+        .bg-secondary-blue { background-color: var(--secondary-blue); }
+        .bg-primary-red { background-color: var(--primary-red); }
+        .bg-primary-red-dark { background-color: var(--primary-red-dark); }
+        .bg-primary-red-light { background-color: var(--primary-red-light); }
+        .text-primary-red { color: var(--primary-red); }
+        .text-primary-blue { color: var(--primary-blue); }
+        .text-secondary-blue { color: var(--secondary-blue); }
+        .border-brand-red { border-color: var(--primary-red); }
+        .border-brand-blue { border-color: var(--accent-blue); }
+        .border-custom { border-color: var(--border-color); }
+
+        /* Unified Gradients */
+        .hero-banner-gradient {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 60%, var(--primary-red-dark) 100%);
+        }
+
+        /* Buttons */
+        .btn-red {
+            background-color: var(--primary-red);
+            color: var(--white);
+            border: 1px solid var(--primary-red);
+            transition: all 0.2s ease-in-out;
+        }
+        .btn-red:hover {
+            background-color: var(--primary-red-dark);
+            border-color: var(--primary-red-dark);
+            box-shadow: 0 4px 12px rgba(211, 47, 47, 0.35);
+            transform: translateY(-1px);
+        }
+
+        .btn-blue-outline {
+            background-color: transparent;
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            transition: all 0.2s ease-in-out;
+        }
+        .btn-blue-outline:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-color: var(--white);
+        }
+
+        .btn-pdf-download {
+            background-color: var(--primary-red);
+            color: var(--white);
+            transition: all 0.2s ease;
+        }
+        .btn-pdf-download:hover {
+            background-color: var(--primary-red-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(211, 47, 47, 0.3);
+        }
+
+        /* Modern Single-Line Navigation Indicator */
+        .nav-tab {
+            position: relative;
+            white-space: nowrap;
+            transition: color 0.15s ease, background-color 0.15s ease;
+        }
+        .nav-tab.active {
+            color: var(--primary-red) !important;
+            font-weight: 700;
+        }
+        .nav-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 10px;
+            right: 10px;
+            height: 3px;
+            background-color: var(--primary-red);
+            border-radius: 9999px;
+        }
+
+        /* Flowchart Step Card */
+        .flow-step-card {
+            border: 2px solid var(--border-color);
+            transition: all 0.2s ease;
+        }
+        .flow-step-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased">
+
+    <!-- Top Corporate Utility Bar -->
+    <div class="bg-primary-blue text-white text-xs py-2.5 border-b border-slate-700/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-between items-center gap-3">
+            <div class="flex items-center space-x-3">
+                <span class="bg-primary-red text-white text-[10px] font-bold px-2 py-0.5 rounded tracking-wide uppercase">BNM LICENSED</span>
+                <span class="text-slate-300 font-medium hidden sm:inline">Insurance Loss Adjusters &amp; Private Investigators</span>
+                <span class="text-slate-400 text-[11px]">• Established 1972</span>
+            </div>
+            
+            <!-- Corporate Motto Ribbon in Top Bar -->
+            <div class="hidden lg:flex items-center space-x-2 bg-white/10 px-3 py-0.5 rounded-full border border-white/20 text-[11px] font-bold uppercase tracking-wider">
+                <i class="fa-solid fa-award text-amber-400 text-xs"></i>
+                <span class="text-slate-300">Motto:</span>
+                <span class="tracking-widest text-red-300">IN PURSUIT OF SERVICE EXCELLENCE</span>
+            </div>
+
+            <div class="flex items-center space-x-5 text-xs font-medium">
+                <a href="tel:0333434700" class="hover:text-primary-red-light transition flex items-center space-x-1.5 text-slate-200">
+                    <i class="fa-solid fa-phone text-xs text-red-400"></i>
+                    <span>03-3343 4700</span>
+                </a>
+                <span class="text-slate-600">|</span>
+                <a href="https://wa.me/60123788914?text=Hello%20Progressive%20Adjustment%20Sdn%20Bhd,%20I%20would%20like%20to%20make%20an%20inquiry." target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center space-x-1.5 transition">
+                    <i class="fa-brands fa-whatsapp text-sm"></i>
+                    <span>WhatsApp: 012-3788914</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-40 bg-white border-b border-custom shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between py-3">
+                <!-- Brand Identity: Perfectly Aligned Logo and Company Name (No awkward pill badge) -->
+                <div class="flex items-center space-x-3.5 cursor-pointer select-none group" onclick="switchTab('home')">
+                    <div class="w-12 h-12 rounded-xl overflow-hidden flex items-center justify-center bg-white border border-slate-200 shadow-sm flex-shrink-0 p-1 group-hover:border-brand-red transition">
+                        <!-- Converted logo.png -->
+                        <img src="logo.png" alt="Progressive Adjustment Sdn. Bhd. Logo" class="w-full h-full object-contain" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-primary-red flex items-center justify-center text-white font-black text-xl rounded-lg\'>PA</div>';">
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <span class="font-extrabold text-lg sm:text-xl tracking-tight text-primary-blue leading-none group-hover:text-primary-red transition">PROGRESSIVE ADJUSTMENT</span>
+                        <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider mt-1 leading-none">SDN. BHD. (107394-K)</span>
+                    </div>
+                </div>
+
+                <!-- Navigation Tabs (Single Horizontal Line Desktop Nav) -->
+                <nav class="hidden xl:flex items-center space-x-0.5 text-[13px] font-medium text-slate-700">
+                    <button onclick="switchTab('home')" class="nav-tab active px-3 py-2 rounded-md hover:text-primary-red transition" data-target="home">Home</button>
+                    <button onclick="switchTab('partnership')" class="nav-tab px-3 py-2 rounded-md hover:text-primary-red transition" data-target="partnership">Partnership</button>
+                    <button onclick="switchTab('about')" class="nav-tab px-3 py-2 rounded-md hover:text-primary-red transition" data-target="about">About Us</button>
+                    <button onclick="switchTab('services')" class="nav-tab px-3 py-2 rounded-md hover:text-primary-red transition" data-target="services">Services</button>
+                    <button onclick="switchTab('flowchart')" class="nav-tab px-3 py-2 rounded-md hover:text-primary-red transition" data-target="flowchart">TPBI Flowchart</button>
+                    <button onclick="switchTab('network')" class="nav-tab px-3 py-2 rounded-md hover:text-primary-red transition" data-target="network">Branch Network</button>
+                    <button onclick="switchTab('team')" class="nav-tab px-3 py-2 rounded-md hover:text-primary-red transition" data-target="team">Management</button>
+                    <button onclick="switchTab('principals')" class="nav-tab px-3 py-2 rounded-md hover:text-primary-red transition" data-target="principals">Principals</button>
+                    <button onclick="switchTab('contact')" class="nav-tab px-3 py-2 rounded-md hover:text-primary-red transition" data-target="contact">Contact</button>
+                </nav>
+
+                <!-- PDF Download Profile Button in Header -->
+                <div class="hidden md:flex items-center ml-2">
+                    <a href="A-29. Corporate Profile PASB (2024).pdf" download="A-29. Corporate Profile PASB (2024).pdf" class="btn-pdf-download px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider flex items-center space-x-2 shadow-sm whitespace-nowrap">
+                        <i class="fa-solid fa-file-arrow-down text-sm"></i>
+                        <span>Download Profile</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Hamburger Button -->
+                <div class="xl:hidden flex items-center">
+                    <button onclick="toggleMobileNav()" class="p-2 rounded-lg text-primary-blue hover:bg-slate-100 focus:outline-none" aria-label="Toggle Navigation">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu Drawer -->
+        <div id="mobile-nav" class="hidden xl:hidden bg-white border-t border-custom px-4 pt-2 pb-6 space-y-1 shadow-lg">
+            <button onclick="switchTab('home'); toggleMobileNav();" class="block w-full text-left px-3 py-2.5 rounded-lg text-sm font-semibold bg-primary-red text-white">Home</button>
+            <button onclick="switchTab('partnership'); toggleMobileNav();" class="block w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-100">Partnership</button>
+            <button onclick="switchTab('about'); toggleMobileNav();" class="block w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-100">About Us</button>
+            <button onclick="switchTab('services'); toggleMobileNav();" class="block w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-100">Services</button>
+            <button onclick="switchTab('flowchart'); toggleMobileNav();" class="block w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-100">TPBI Flowchart</button>
+            <button onclick="switchTab('network'); toggleMobileNav();" class="block w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-100">Branch Network</button>
+            <button onclick="switchTab('team'); toggleMobileNav();" class="block w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-100">Management & Directory</button>
+            <button onclick="switchTab('principals'); toggleMobileNav();" class="block w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-100">Principals</button>
+            <button onclick="switchTab('contact'); toggleMobileNav();" class="block w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-100">Contact Us</button>
+            <div class="pt-3 border-t border-slate-200 flex flex-col space-y-2">
+                <a href="A-29. Corporate Profile PASB (2024).pdf" download="A-29. Corporate Profile PASB (2024).pdf" class="btn-pdf-download text-center py-2.5 rounded-lg text-xs font-bold tracking-wider uppercase">
+                    <i class="fa-solid fa-file-arrow-down mr-1"></i> Download Profile (PDF)
+                </a>
+                <a href="https://wa.me/60123788914?text=Hello%20Progressive%20Adjustment%20Sdn%20Bhd,%20I%20would%20like%20to%20make%20an%20inquiry." target="_blank" rel="noopener noreferrer" class="bg-emerald-600 text-white text-center py-2.5 rounded-lg text-xs font-bold tracking-wider uppercase">
+                    <i class="fa-brands fa-whatsapp mr-1"></i> Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Prominent Centered Corporate Motto Banner (Bold, Large, Italic, Centered across page) -->
+    <section class="bg-gradient-to-r from-slate-50 via-red-50/60 to-slate-50 border-b-2 border-red-200/80 py-5 sm:py-6 shadow-inner">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center justify-center space-x-3 sm:space-x-5 max-w-4xl mx-auto">
+                <span class="hidden md:inline-block h-0.5 w-12 sm:w-20 bg-gradient-to-r from-transparent to-primary-red"></span>
+                <div class="flex flex-col items-center">
+                    <span class="text-[10px] sm:text-xs font-black uppercase tracking-[0.25em] text-slate-400 mb-1 flex items-center gap-1.5">
+                        <i class="fa-solid fa-award text-amber-500"></i> Corporate Motto
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black italic tracking-wide text-primary-red drop-shadow-sm select-none font-serif">
+                        &ldquo;IN PURSUIT OF SERVICE EXCELLENCE&rdquo;
+                    </h2>
+                </div>
+                <span class="hidden md:inline-block h-0.5 w-12 sm:w-20 bg-gradient-to-l from-transparent to-primary-red"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Persistent WhatsApp Trigger Button -->
+    <a href="https://wa.me/60123788914?text=Hello%20Progressive%20Adjustment%20Sdn%20Bhd,%20I%20would%20like%20to%20make%20an%20inquiry." 
+       target="_blank" 
+       rel="noopener noreferrer"
+       class="fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-700 text-white p-3.5 sm:p-4 rounded-full shadow-2xl flex items-center space-x-2 border-2 border-white transition-all transform hover:scale-105 group"
+       title="Communicate with Progressive Adjustment on WhatsApp">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+        <span class="hidden sm:inline font-bold text-xs pr-1">Chat With Us</span>
+    </a>
+
+    <!-- Dynamic Content Views Container -->
+    <main class="flex-grow">
+
+        <!-- ================= TAB 1: HOME ================= -->
+        <section id="view-home" class="view-panel">
+            <!-- Hero Banner -->
+            <div class="hero-banner-gradient text-white py-20 lg:py-24 relative overflow-hidden">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <div class="lg:col-span-7 space-y-6">
+                            <!-- Hero Centerpiece Motto Callout -->
+                            <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-red-600/40 via-red-500/20 to-blue-600/40 backdrop-blur-md px-4 py-2 rounded-full border border-red-400/60 shadow-lg">
+                                <i class="fa-solid fa-certificate text-amber-400 text-sm"></i>
+                                <span class="text-white text-xs sm:text-sm font-black italic tracking-wider">
+                                    &ldquo;IN PURSUIT OF SERVICE EXCELLENCE&rdquo;
+                                </span>
+                            </div>
+
+                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+                                TURNING THE TIDE <br><span class="text-primary-red underline decoration-white/30">IN YOUR FAVOUR</span>
+                            </h1>
+
+                            <p class="text-base sm:text-lg text-slate-200 max-w-2xl leading-relaxed">
+                                Over 49 years of unalloyed loss adjusting and specialized investigation experience across Malaysia. Safeguarding insurance principals against fraudulent claims, exaggerated injuries, and inflated liabilities.
+                            </p>
+
+                            <!-- Hero Actions -->
+                            <div class="flex flex-wrap items-center gap-4 pt-2">
+                                <a href="A-29. Corporate Profile PASB (2024).pdf" download="A-29. Corporate Profile PASB (2024).pdf" target="_blank" class="btn-red px-6 py-3.5 rounded-xl font-bold text-sm flex items-center space-x-2 shadow-lg">
+                                    <i class="fa-solid fa-file-arrow-down text-base"></i>
+                                    <span>Download Company Profile (PDF)</span>
+                                </a>
+                                <a href="https://wa.me/60123788914?text=Hello%20Progressive%20Adjustment%20Sdn%20Bhd,%20I%20would%20like%20to%20make%20an%20inquiry." target="_blank" rel="noopener noreferrer" class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3.5 rounded-xl font-bold text-sm flex items-center space-x-2 shadow-lg transition">
+                                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                                    <span>WhatsApp Inquiry</span>
+                                </a>
+                                <button onclick="switchTab('services')" class="btn-blue-outline px-6 py-3.5 rounded-xl font-semibold text-sm transition">
+                                    Explore Services
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Highlights Hero Card with logo.png -->
+                        <div class="lg:col-span-5">
+                            <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 shadow-2xl text-white space-y-6">
+                                <div class="flex items-center space-x-4 border-b border-white/10 pb-6">
+                                    <div class="w-16 h-16 rounded-2xl bg-white p-2 flex items-center justify-center shadow-md flex-shrink-0 border border-white/30">
+                                        <img src="logo.png" alt="PASB Logo" class="w-full h-full object-contain" onerror="this.parentElement.innerHTML='<div class=\'w-full h-full bg-primary-red rounded-xl flex items-center justify-center font-black text-white text-xl\'>49+</div>';">
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-xl leading-tight">49+ Years of Excellence</h3>
+                                        <p class="text-xs text-slate-300">Pioneer Establishment in Malaysia (Since 1972)</p>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="bg-white/5 rounded-2xl p-4 border border-white/10">
+                                        <p class="text-xs text-slate-300 uppercase tracking-wider font-semibold">Head Office</p>
+                                        <p class="text-base sm:text-lg font-bold text-white mt-1">Klang, Selangor</p>
+                                        <p class="text-[11px] text-slate-300">Centralized Management</p>
+                                    </div>
+                                    <div class="bg-white/5 rounded-2xl p-4 border border-white/10">
+                                        <p class="text-xs text-slate-300 uppercase tracking-wider font-semibold">Coverage</p>
+                                        <p class="text-base sm:text-lg font-bold text-white mt-1">West Malaysia</p>
+                                        <p class="text-[11px] text-slate-300">Resident Representatives</p>
+                                    </div>
+                                    <div class="bg-white/5 rounded-2xl p-4 border border-white/10">
+                                        <p class="text-xs text-slate-300 uppercase tracking-wider font-semibold">Workforce</p>
+                                        <p class="text-base sm:text-lg font-bold text-white mt-1">29 Personnel</p>
+                                        <p class="text-[11px] text-slate-300">Adjusters & Investigators</p>
+                                    </div>
+                                    <div class="bg-white/5 rounded-2xl p-4 border border-white/10">
+                                        <p class="text-xs text-slate-300 uppercase tracking-wider font-semibold">Statutory</p>
+                                        <p class="text-base sm:text-lg font-bold text-white mt-1">BNM & KKDN</p>
+                                        <p class="text-[11px] text-slate-300">Licensed Practices</p>
+                                    </div>
+                                </div>
+
+                                <div class="bg-primary-red/20 border border-primary-red/50 rounded-2xl p-4 text-xs leading-relaxed text-slate-200">
+                                    <strong class="text-white block mb-1"><i class="fa-solid fa-circle-check text-primary-red mr-1"></i> Certified & Regulated:</strong>
+                                    Licensed under Bank Negara Malaysia (Sec. 17 Insurance Act 1996) and Kementerian Keselamatan Dalam Negeri (Sec. 3 Private Agency Act No. 27/71).
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Download Callout Banner -->
+            <div class="bg-white border-b border-custom py-8">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="bg-slate-50 border border-custom rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
+                        <div class="flex items-center space-x-5">
+                            <div class="w-16 h-16 bg-primary-red-light text-primary-red rounded-2xl flex items-center justify-center text-3xl font-bold flex-shrink-0">
+                                <i class="fa-solid fa-file-pdf"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-primary-blue">Official Corporate Profile Document (2024 Edition)</h3>
+                                <p class="text-sm text-slate-600 mt-1">Direct corporate credentials, loss adjustment scope, statutory profile, and insurer references.</p>
+                                <span class="text-xs text-slate-400 font-mono">File: A-29. Corporate Profile PASB (2024).pdf • 316 KB</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3 w-full md:w-auto">
+                            <a href="A-29. Corporate Profile PASB (2024).pdf" download="A-29. Corporate Profile PASB (2024).pdf" class="btn-red w-full md:w-auto px-6 py-3 rounded-xl font-bold text-sm text-center flex items-center justify-center space-x-2">
+                                <i class="fa-solid fa-download"></i>
+                                <span>Download PDF</span>
+                            </a>
+                            <a href="https://wa.me/60123788914?text=Hello%20Progressive%20Adjustment%20Sdn%20Bhd,%20I%20would%20like%20to%20make%20an%20inquiry." target="_blank" rel="noopener noreferrer" class="bg-emerald-600 hover:bg-emerald-700 text-white w-full md:w-auto px-5 py-3 rounded-xl font-bold text-sm text-center flex items-center justify-center space-x-2 transition">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                <span>WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dedicated Motto Spotlight Banner -->
+            <div class="bg-primary-blue text-white py-14 border-y-4 border-brand-red relative overflow-hidden shadow-2xl">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-4">
+                    <div class="inline-flex items-center gap-2 text-amber-400 text-xs font-bold uppercase tracking-widest">
+                        <i class="fa-solid fa-star"></i>
+                        <span>OUR GUIDING PHILOSOPHY SINCE 1972</span>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="max-w-4xl mx-auto py-2">
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black italic tracking-wider text-white uppercase font-serif">
+                            &ldquo;IN PURSUIT OF SERVICE EXCELLENCE&rdquo;
+                        </h2>
+                    </div>
+                    <div class="w-24 h-1 bg-primary-red mx-auto rounded-full"></div>
+                    <p class="text-slate-300 max-w-3xl mx-auto text-sm sm:text-base leading-relaxed pt-2">
+                        For over 49 years, Progressive Adjustment Sdn. Bhd. has stood alongside Malaysia's top insurance principals with uncompromising vigilance, meticulous field investigation, and incontrovertible evidence to protect balance sheets and minimize loss ratios.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Core Pillars Section -->
+            <div class="py-16 bg-slate-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-16">
+                        <span class="text-xs font-bold text-primary-red uppercase tracking-widest bg-primary-red-light px-3 py-1 rounded-full border border-red-200">Our Pillars</span>
+                        <h2 class="text-3xl font-extrabold text-primary-blue mt-3">Why Insurers Rely On PASB</h2>
+                        <p class="text-slate-600 text-sm mt-2">Dedicated expertise driven by our pursuit of service excellence.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-white p-8 rounded-2xl border border-custom shadow-sm hover:border-brand-blue transition">
+                            <div class="w-12 h-12 bg-primary-red-light text-primary-red rounded-xl flex items-center justify-center text-xl font-bold mb-6">
+                                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-primary-blue mb-3">Specialised Fraud Detection</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Our experienced investigators brief field adjusters thoroughly prior to each assignment. The minute fraud is suspected, specialists step in directly to authenticate facts and expose bogus claims.
+                            </p>
+                        </div>
+
+                        <div class="bg-white p-8 rounded-2xl border border-custom shadow-sm hover:border-brand-blue transition">
+                            <div class="w-12 h-12 bg-blue-50 text-secondary-blue rounded-xl flex items-center justify-center text-xl font-bold mb-6">
+                                <i class="fa-solid fa-camera"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-primary-blue mb-3">Discreet Surveillance Evidence</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                In-depth surveillance into injured parties' physical conditions and actual daily activities, verified with concrete photographic and video evidence to defeat inflated loss-of-earnings claims.
+                            </p>
+                        </div>
+
+                        <div class="bg-white p-8 rounded-2xl border border-custom shadow-sm hover:border-brand-blue transition">
+                            <div class="w-12 h-12 bg-primary-red-light text-primary-red rounded-xl flex items-center justify-center text-xl font-bold mb-6">
+                                <i class="fa-solid fa-gavel"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-primary-blue mb-3">Legal & Court Hearing Support</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Professional support tracing and locating missing defendants and key witnesses, securing their presence in court hearings and conducting solicitor interviews to protect principals.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TAB 2: PARTNERSHIP ================= -->
+        <section id="view-partnership" class="view-panel hidden py-14">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white rounded-3xl border border-custom shadow-sm p-8 sm:p-12 space-y-12">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-6">
+                        <div>
+                            <span class="text-xs font-bold text-primary-red uppercase tracking-widest bg-primary-red-light px-3 py-1 rounded-full border border-red-200">Alliance</span>
+                            <h2 class="text-3xl sm:text-4xl font-extrabold text-primary-blue mt-3">A Progressive Partnership</h2>
+                            <p class="text-slate-600 mt-2 text-base">Turning the tide in your favour against the alarming rise in fraudulent and inflated claims.</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="inline-flex items-center gap-1.5 text-xs font-extrabold text-primary-red uppercase tracking-wider bg-slate-50 px-3.5 py-1.5 rounded-full border border-slate-200">
+                                <i class="fa-solid fa-award"></i> In Pursuit of Service Excellence
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                        <div class="lg:col-span-7 space-y-5 text-slate-700 leading-relaxed text-sm sm:text-base">
+                            <p class="font-semibold text-primary-blue text-lg">
+                                Fraud in Malaysia is not only getting more sophisticated and complex but increasing in scope and diversity.
+                            </p>
+                            <p>
+                                As insurers, you will be the first to agree with us that the number of fraudulent claims, especially in bodily injuries, is increasing at an alarming rate. Unless we are willing to let this trend go unabated and unchallenged, we must approach the whole problem from a new perspective.
+                            </p>
+                            <p>
+                                At Progressive Adjusters, we strongly believe that to turn the tide in your favour, we must form a strategic partnership to forge an alliance that will allow us to be vigilant and judicious when assessing all your insurance claims.
+                            </p>
+                            <div class="p-4 bg-slate-50 border-l-4 border-brand-red rounded-r-xl">
+                                <p class="text-sm font-medium text-primary-blue italic">
+                                    "Because of these fraudulent few, the many will suffer." Our function in this partnership is to protect you from paying higher claims as we filter out the bad and doubtful cases.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-5 bg-primary-blue text-white rounded-2xl p-8 space-y-6 shadow-xl">
+                            <h3 class="text-xl font-bold text-primary-red-light flex items-center space-x-2">
+                                <i class="fa-solid fa-balance-scale"></i>
+                                <span>The PASB Cardinal Rule</span>
+                            </h3>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                Before assigning any adjuster to the field, our experienced investigators brief the adjuster on the specific area requiring special attention and tell them exactly what to look out for.
+                            </p>
+                            <div class="bg-secondary-blue/80 p-4 rounded-xl border border-blue-400/30 text-xs text-slate-200">
+                                <strong>Immediate Escalation:</strong> The minute something hints at fraud, our specialists become directly involved in pursuing the matter to its conclusion, exposing false claims backed by surveillance and documentary proof.
+                            </div>
+                            <div class="pt-2">
+                                <a href="A-29. Corporate Profile PASB (2024).pdf" download="A-29. Corporate Profile PASB (2024).pdf" class="btn-red w-full py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider text-center block">
+                                    Download Profile PDF
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3 Benefit Pillars -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-custom">
+                        <div class="p-6 rounded-2xl bg-slate-50 border border-custom">
+                            <span class="text-primary-red font-black text-2xl">45+</span>
+                            <h4 class="font-bold text-primary-blue mt-2 mb-1">Decades of Proven Track Record</h4>
+                            <p class="text-xs text-slate-600">Unalloyed experience invested upfront to assist insurers in curbing operating costs.</p>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-slate-50 border border-custom">
+                            <span class="text-secondary-blue font-black text-2xl">100%</span>
+                            <h4 class="font-bold text-primary-blue mt-2 mb-1">Judicious Fact Authentication</h4>
+                            <p class="text-xs text-slate-600">Every investigation is backed by good old-fashioned legwork and technical methodologies.</p>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-slate-50 border border-custom">
+                            <span class="text-primary-red font-black text-2xl">Local</span>
+                            <h4 class="font-bold text-primary-blue mt-2 mb-1">Deep Cultural Insight</h4>
+                            <p class="text-xs text-slate-600">Deep understanding of local customs, conventions, and society to get to the heart of every claim.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TAB 3: ABOUT US ================= -->
+        <section id="view-about" class="view-panel hidden py-14">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white rounded-3xl border border-custom shadow-sm p-8 sm:p-12 space-y-12">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-6">
+                        <div>
+                            <span class="text-xs font-bold text-primary-red uppercase tracking-widest bg-primary-red-light px-3 py-1 rounded-full border border-red-200">About PASB</span>
+                            <h2 class="text-3xl sm:text-4xl font-extrabold text-primary-blue mt-3">Company Background & Regulatory Standing</h2>
+                            <p class="text-slate-600 mt-2 text-base">Pioneering the Malaysian Loss Adjusting industry since 1972.</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="inline-flex items-center gap-1.5 text-xs font-extrabold text-primary-red uppercase tracking-wider bg-slate-50 px-3.5 py-1.5 rounded-full border border-slate-200">
+                                <i class="fa-solid fa-award"></i> In Pursuit of Service Excellence
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                        <!-- History and Establishment -->
+                        <div class="space-y-4 text-sm sm:text-base text-slate-700 leading-relaxed">
+                            <h3 class="text-xl font-bold text-primary-blue">History & Evolution</h3>
+                            <p>
+                                <strong>PROGRESSIVE ADJUSTMENT SDN. BHD.</strong> commenced operations in the Insurance Loss Adjusting industry in 1972 as a Sole Proprietorship known as <strong>MALAYSIAN SERVICE</strong>.
+                            </p>
+                            <p>
+                                As one of the pioneer establishments in the Malaysian Loss Adjusting industry, the company was awarded with a Loss Adjusting license by the Malaysian Treasury (Department) for the practice.
+                            </p>
+                            <p>
+                                In 1982, MALAYSIAN SERVICE was incorporated as PROGRESSIVE ADJUSTMENT SDN. BHD. with an Authorized Capital of RM 500,000.00 and Paid-up capital of RM 150,000.00.
+                            </p>
+                            <div class="bg-slate-50 p-6 rounded-2xl border border-custom space-y-2 text-xs">
+                                <h4 class="font-bold text-primary-blue text-sm mb-2">Statutory Compliance & Licenses</h4>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fa-solid fa-check text-primary-red"></i>
+                                    <span><strong>Bank Negara Malaysia:</strong> Licensed under Section 17 of the Insurance Act 1996</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fa-solid fa-check text-primary-red"></i>
+                                    <span><strong>Kementerian Keselamatan Dalam Negeri:</strong> Licensed under Section 3 of Private Agency Act No. 27/71</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fa-solid fa-check text-primary-red"></i>
+                                    <span><strong>Company Registration:</strong> 198301012001 (107394-K)</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fa-solid fa-check text-primary-red"></i>
+                                    <span><strong>Workforce:</strong> 29 Dedicated Professionals</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vision, Mission, Goal Cards -->
+                        <div class="space-y-4">
+                            <div class="bg-primary-blue text-white p-6 rounded-2xl shadow">
+                                <div class="flex items-center space-x-3 mb-2">
+                                    <span class="w-8 h-8 rounded-lg bg-primary-red flex items-center justify-center text-sm font-bold"><i class="fa-solid fa-eye"></i></span>
+                                    <h4 class="font-bold text-lg">OUR VISION</h4>
+                                </div>
+                                <p class="text-xs text-slate-300 leading-relaxed">
+                                    To be a Partner with our Principals by Providing Incontrovertible Insurance Loss Adjusting services particularly in Bodily Injury Claims and General Claims.
+                                </p>
+                            </div>
+
+                            <div class="bg-secondary-blue text-white p-6 rounded-2xl shadow">
+                                <div class="flex items-center space-x-3 mb-2">
+                                    <span class="w-8 h-8 rounded-lg bg-primary-red flex items-center justify-center text-sm font-bold"><i class="fa-solid fa-bullseye"></i></span>
+                                    <h4 class="font-bold text-lg">OUR MISSION</h4>
+                                </div>
+                                <ul class="text-xs text-slate-200 space-y-1.5 list-disc list-inside leading-relaxed">
+                                    <li>To provide prompt and efficient services in all assignments.</li>
+                                    <li>To provide equitable and quality reports with rock solid evidence to minimize liability and quantum paid out by our principals.</li>
+                                    <li>Practice a high standard of professionalism in all our dealings with the Insured and related parties.</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-slate-50 border border-custom p-6 rounded-2xl">
+                                <div class="flex items-center space-x-3 mb-2">
+                                    <span class="w-8 h-8 rounded-lg bg-primary-red-light text-primary-red flex items-center justify-center text-sm font-bold"><i class="fa-solid fa-trophy"></i></span>
+                                    <h4 class="font-bold text-lg text-primary-blue">OUR GOAL</h4>
+                                </div>
+                                <p class="text-xs text-slate-600 leading-relaxed">
+                                    To maintain our position as the leading and trusted Adjuster delivered with efficiency, accuracy, and integrity.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TAB 4: SERVICES ================= -->
+        <section id="view-services" class="view-panel hidden py-14">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white rounded-3xl border border-custom shadow-sm p-8 sm:p-12 space-y-12">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-6">
+                        <div>
+                            <span class="text-xs font-bold text-primary-red uppercase tracking-widest bg-primary-red-light px-3 py-1 rounded-full border border-red-200">Capabilities</span>
+                            <h2 class="text-3xl sm:text-4xl font-extrabold text-primary-blue mt-3">Our Core Loss Adjusting Services</h2>
+                            <p class="text-slate-600 mt-2 text-base">Comprehensive range of loss adjusting and risk-related investigative expertise.</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="inline-flex items-center gap-1.5 text-xs font-extrabold text-primary-red uppercase tracking-wider bg-slate-50 px-3.5 py-1.5 rounded-full border border-slate-200">
+                                <i class="fa-solid fa-award"></i> In Pursuit of Service Excellence
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Motor Insurance -->
+                        <div class="bg-slate-50 rounded-2xl border border-custom p-6 flex flex-col justify-between hover:border-brand-blue transition">
+                            <div>
+                                <div class="w-12 h-12 bg-primary-red-light text-primary-red rounded-xl flex items-center justify-center text-xl font-bold mb-4">
+                                    <i class="fa-solid fa-car-burst"></i>
+                                </div>
+                                <h3 class="font-bold text-lg text-primary-blue mb-3">Motor Insurance</h3>
+                                <ul class="text-xs text-slate-600 space-y-2.5">
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fa-solid fa-check text-primary-red mt-0.5"></i>
+                                        <span><strong>Third Party Bodily Injury:</strong> Claims assessment & quantum minimization.</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fa-solid fa-check text-primary-red mt-0.5"></i>
+                                        <span><strong>Theft Claims:</strong> In-depth recovery and validity checks.</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fa-solid fa-check text-primary-red mt-0.5"></i>
+                                        <span><strong>Own Damage (O.D.I):</strong> Incident verification and collision damage checks.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <span class="mt-6 text-[11px] font-bold text-primary-red uppercase tracking-wider block border-t border-slate-200 pt-3">Specialised Division</span>
+                        </div>
+
+                        <!-- Non-Motor Personal Lines -->
+                        <div class="bg-slate-50 rounded-2xl border border-custom p-6 flex flex-col justify-between hover:border-brand-blue transition">
+                            <div>
+                                <div class="w-12 h-12 bg-blue-50 text-secondary-blue rounded-xl flex items-center justify-center text-xl font-bold mb-4">
+                                    <i class="fa-solid fa-house-medical"></i>
+                                </div>
+                                <h3 class="font-bold text-lg text-primary-blue mb-3">Non-Motor Lines</h3>
+                                <ul class="text-xs text-slate-600 space-y-2.5">
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fa-solid fa-check text-secondary-blue mt-0.5"></i>
+                                        <span><strong>Personal Accidents:</strong> Scope of disability authentication.</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fa-solid fa-check text-secondary-blue mt-0.5"></i>
+                                        <span><strong>Medical/Healthcare:</strong> In-depth hospital & clinic records audit.</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fa-solid fa-check text-secondary-blue mt-0.5"></i>
+                                        <span><strong>General Claims:</strong> Property and commercial risk adjustment.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <span class="mt-6 text-[11px] font-bold text-secondary-blue uppercase tracking-wider block border-t border-slate-200 pt-3">Personal Business</span>
+                        </div>
+
+                        <!-- Life Insurance -->
+                        <div class="bg-slate-50 rounded-2xl border border-custom p-6 flex flex-col justify-between hover:border-brand-blue transition">
+                            <div>
+                                <div class="w-12 h-12 bg-primary-red-light text-primary-red rounded-xl flex items-center justify-center text-xl font-bold mb-4">
+                                    <i class="fa-solid fa-notes-medical"></i>
+                                </div>
+                                <h3 class="font-bold text-lg text-primary-blue mb-3">Life Insurance</h3>
+                                <ul class="text-xs text-slate-600 space-y-2.5">
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fa-solid fa-check text-primary-red mt-0.5"></i>
+                                        <span><strong>Fraud Misrepresentations:</strong> In-depth life fraud probing.</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fa-solid fa-check text-primary-red mt-0.5"></i>
+                                        <span><strong>Non-Disclosure:</strong> Verification of material facts pre-inception.</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fa-solid fa-check text-primary-red mt-0.5"></i>
+                                        <span><strong>Inflated Claims:</strong> Medical bills & treatments review.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <span class="mt-6 text-[11px] font-bold text-primary-red uppercase tracking-wider block border-t border-slate-200 pt-3">Fraud Investigation</span>
+                        </div>
+
+                        <!-- Court Hearing Support -->
+                        <div class="bg-slate-50 rounded-2xl border border-custom p-6 flex flex-col justify-between hover:border-brand-blue transition">
+                            <div>
+                                <div class="w-12 h-12 bg-blue-50 text-secondary-blue rounded-xl flex items-center justify-center text-xl font-bold mb-4">
+                                    <i class="fa-solid fa-scale-balanced"></i>
+                                </div>
+                                <h3 class="font-bold text-lg text-primary-blue mb-3">Court Hearings</h3>
+                                <ul class="text-xs text-slate-600 space-y-2.5">
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fa-solid fa-check text-secondary-blue mt-0.5"></i>
+                                        <span><strong>Trace & Locate:</strong> Finding missing defendants & witnesses.</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fa-solid fa-check text-secondary-blue mt-0.5"></i>
+                                        <span><strong>Securing Presence:</strong> Ensuring witness attendance in court.</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fa-solid fa-check text-secondary-blue mt-0.5"></i>
+                                        <span><strong>Legal Coordination:</strong> Detailed interviews with solicitors.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <span class="mt-6 text-[11px] font-bold text-secondary-blue uppercase tracking-wider block border-t border-slate-200 pt-3">Litigation Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TAB 5: TPBI FLOWCHART ================= -->
+        <section id="view-flowchart" class="view-panel hidden py-14">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white rounded-3xl border border-custom shadow-sm p-8 sm:p-12 space-y-10">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-6">
+                        <div>
+                            <span class="text-xs font-bold text-primary-red uppercase tracking-widest bg-primary-red-light px-3 py-1 rounded-full border border-red-200">Standard Operating Procedure</span>
+                            <h2 class="text-3xl font-extrabold text-primary-blue mt-3">Specialised Investigation on TPBI Flow Chart</h2>
+                            <p class="text-slate-600 text-sm mt-1">Systematic methodology anchored in our pursuit of service excellence.</p>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-3">
+                            <span class="inline-flex items-center gap-1.5 text-xs font-extrabold text-primary-red uppercase tracking-wider bg-slate-50 px-3.5 py-1.5 rounded-full border border-slate-200">
+                                <i class="fa-solid fa-award"></i> In Pursuit of Service Excellence
+                            </span>
+                            <a href="A-29. Corporate Profile PASB (2024).pdf" download="A-29. Corporate Profile PASB (2024).pdf" class="btn-pdf-download px-4 py-2 rounded-xl text-xs font-bold flex items-center space-x-2">
+                                <i class="fa-solid fa-file-pdf"></i>
+                                <span>Download Full Chart</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Flow Chart Step Tree -->
+                    <div class="space-y-6">
+                        <!-- Phase 1: ACCIDENT -->
+                        <div class="max-w-2xl mx-auto bg-primary-blue text-white rounded-2xl p-6 text-center shadow-md">
+                            <span class="text-[11px] font-bold text-primary-red-light uppercase tracking-widest">Phase 1</span>
+                            <h3 class="text-xl font-bold mt-1 mb-4">ACCIDENT EVALUATION</h3>
+                            <div class="grid grid-cols-2 gap-3 text-xs text-left">
+                                <div class="bg-white/10 p-2.5 rounded-lg border border-white/10 flex items-center space-x-2">
+                                    <i class="fa-solid fa-arrow-right text-primary-red text-xs"></i>
+                                    <span>Authenticity of the accident</span>
+                                </div>
+                                <div class="bg-white/10 p-2.5 rounded-lg border border-white/10 flex items-center space-x-2">
+                                    <i class="fa-solid fa-arrow-right text-primary-red text-xs"></i>
+                                    <span>Contributing Factors</span>
+                                </div>
+                                <div class="bg-white/10 p-2.5 rounded-lg border border-white/10 flex items-center space-x-2">
+                                    <i class="fa-solid fa-arrow-right text-primary-red text-xs"></i>
+                                    <span>Consistency of Injury to Accident</span>
+                                </div>
+                                <div class="bg-white/10 p-2.5 rounded-lg border border-white/10 flex items-center space-x-2">
+                                    <i class="fa-solid fa-arrow-right text-primary-red text-xs"></i>
+                                    <span>Period of Disability</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Connector -->
+                        <div class="flex justify-center text-primary-red text-xl"><i class="fa-solid fa-arrow-down"></i></div>
+
+                        <!-- Phase 2: INJURY & TREATMENT -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="flow-step-card bg-slate-50 rounded-2xl p-6">
+                                <span class="text-[10px] font-bold text-primary-red uppercase tracking-wider">Phase 2A</span>
+                                <h4 class="font-bold text-lg text-primary-blue mb-3">INJURY</h4>
+                                <ul class="text-xs text-slate-700 space-y-2">
+                                    <li class="p-2 bg-white rounded border border-custom">• Nature of injury</li>
+                                    <li class="p-2 bg-white rounded border border-custom">• Check on pre-existing injury / post-accident injury</li>
+                                    <li class="p-2 bg-white rounded border border-custom">• Other causes not related to M.V.A</li>
+                                    <li class="p-2 bg-white rounded border border-custom">• Physical examination on extent of injury</li>
+                                </ul>
+                            </div>
+                            <div class="flow-step-card bg-slate-50 rounded-2xl p-6">
+                                <span class="text-[10px] font-bold text-secondary-blue uppercase tracking-wider">Phase 2B</span>
+                                <h4 class="font-bold text-lg text-primary-blue mb-3">TREATMENT</h4>
+                                <ul class="text-xs text-slate-700 space-y-2">
+                                    <li class="p-2 bg-white rounded border border-custom">• Comments on treatment</li>
+                                    <li class="p-2 bg-white rounded border border-custom">• Negligence in treatment</li>
+                                    <li class="p-2 bg-white rounded border border-custom">• Follow-up treatment checks</li>
+                                    <li class="p-2 bg-white rounded border border-custom">• Discharge at own risk (Negligence of claimants)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Connector -->
+                        <div class="flex justify-center text-primary-red text-xl"><i class="fa-solid fa-arrow-down"></i></div>
+
+                        <!-- Phase 3: MEDICAL REPORT & DISABILITY PERIOD -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="flow-step-card bg-slate-50 rounded-2xl p-6">
+                                <span class="text-[10px] font-bold text-primary-red uppercase tracking-wider">Phase 3A</span>
+                                <h4 class="font-bold text-lg text-primary-blue mb-3">MEDICAL REPORT</h4>
+                                <ul class="text-xs text-slate-700 space-y-2">
+                                    <li class="p-2 bg-white rounded border border-custom">• In-depth medical evaluation</li>
+                                    <li class="p-2 bg-white rounded border border-custom">• Whether need for second opinion / specialist report</li>
+                                    <li class="p-2 bg-white rounded border border-custom">• Identifying specialist in specific areas</li>
+                                </ul>
+                            </div>
+                            <div class="flow-step-card bg-slate-50 rounded-2xl p-6">
+                                <span class="text-[10px] font-bold text-secondary-blue uppercase tracking-wider">Phase 3B</span>
+                                <h4 class="font-bold text-lg text-primary-blue mb-3">DISABILITY PERIOD</h4>
+                                <ul class="text-xs text-slate-700 space-y-2">
+                                    <li class="p-2 bg-white rounded border border-custom">• Whether normal for such injury</li>
+                                    <li class="p-2 bg-white rounded border border-custom">• Undue / unnecessary prolongation of disability period</li>
+                                    <li class="p-2 bg-white rounded border border-custom">• Verification of loss of earnings</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Connector -->
+                        <div class="flex justify-center text-primary-red text-xl"><i class="fa-solid fa-arrow-down"></i></div>
+
+                        <!-- Phase 4: PERMANENT DISABILITY & LIABILITY -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="flow-step-card bg-slate-50 rounded-2xl p-6">
+                                <span class="text-[10px] font-bold text-primary-red uppercase tracking-wider">Phase 4A</span>
+                                <h4 class="font-bold text-lg text-primary-blue mb-3">PERMANENT DISABILITY</h4>
+                                <ul class="text-xs text-slate-700 space-y-2">
+                                    <li class="p-2 bg-white rounded border border-custom">• Authenticity of permanent disability (Fabrication detection)</li>
+                                    <li class="p-2 bg-white rounded border border-custom">• Causation — whether direct result of accident</li>
+                                </ul>
+                            </div>
+                            <div class="flow-step-card bg-slate-50 rounded-2xl p-6">
+                                <span class="text-[10px] font-bold text-secondary-blue uppercase tracking-wider">Phase 4B</span>
+                                <h4 class="font-bold text-lg text-primary-blue mb-3">LIABILITY</h4>
+                                <ul class="text-xs text-slate-700 space-y-2">
+                                    <li class="p-2 bg-white rounded border border-custom">• Negligence remarks to reduce principal exposure</li>
+                                    <li class="p-2 bg-white rounded border border-custom">• Quantum containment recommendations</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Connector -->
+                        <div class="flex justify-center text-primary-red text-xl"><i class="fa-solid fa-arrow-down"></i></div>
+
+                        <!-- Phase 5: SURVEILLANCE & SETTLEMENT -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-primary-blue text-white rounded-2xl p-6">
+                                <span class="text-[10px] font-bold text-primary-red uppercase tracking-wider">Phase 5A</span>
+                                <h4 class="font-bold text-lg mb-2">SURVEILLANCE (WHERE NECESSARY)</h4>
+                                <p class="text-xs text-slate-300">• Discreet investigation of employment status after accident with video & photographic evidence.</p>
+                            </div>
+                            <div class="bg-secondary-blue text-white rounded-2xl p-6">
+                                <span class="text-[10px] font-bold text-primary-red-light uppercase tracking-wider">Phase 5B</span>
+                                <h4 class="font-bold text-lg mb-2">SETTLEMENT (WHERE INSTRUCTED)</h4>
+                                <p class="text-xs text-slate-300">• Structured negotiations with claimant and plaintiff's solicitors under instructions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TAB 6: NETWORK ================= -->
+        <section id="view-network" class="view-panel hidden py-14">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white rounded-3xl border border-custom shadow-sm p-8 sm:p-12 space-y-12">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-6">
+                        <div>
+                            <span class="text-xs font-bold text-primary-red uppercase tracking-widest bg-primary-red-light px-3 py-1 rounded-full border border-red-200">Coverage</span>
+                            <h2 class="text-3xl sm:text-4xl font-extrabold text-primary-blue mt-3">West Malaysia Branch Network</h2>
+                            <p class="text-slate-600 mt-2 text-base">Centralized management in Klang with resident representatives strategically deployed across Peninsular Malaysia.</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="inline-flex items-center gap-1.5 text-xs font-extrabold text-primary-red uppercase tracking-wider bg-slate-50 px-3.5 py-1.5 rounded-full border border-slate-200">
+                                <i class="fa-solid fa-award"></i> In Pursuit of Service Excellence
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                        <!-- Current Presence with map.png -->
+                        <div class="bg-primary-blue text-white rounded-2xl p-8 space-y-6 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-xl font-bold text-primary-red-light flex items-center space-x-2">
+                                        <i class="fa-solid fa-map-pin text-primary-red"></i>
+                                        <span>Present Day Network</span>
+                                    </h3>
+                                    <span class="text-[11px] bg-primary-red text-white font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Active</span>
+                                </div>
+                                <p class="text-xs text-slate-300 mb-5">
+                                    All operations are directed under ONE centralized management based in Klang, Selangor, providing rapid field deployments.
+                                </p>
+
+                                <!-- Present Day Map Graphic with map.png -->
+                                <div class="rounded-xl overflow-hidden border border-white/20 bg-slate-900/60 p-3 mb-6 text-center">
+                                    <img src="map.png" alt="Present Day West Malaysia Network Map" class="w-full max-h-96 object-contain rounded-lg mx-auto shadow-md" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'py-12 text-slate-400 text-xs italic\'><i class=\'fa-solid fa-map-location-dot text-3xl mb-2 block text-primary-red\'></i>Peninsular Malaysia Resident Network: Klang HQ, Butterworth, Alor Star, Sg Petani, Ipoh, Johor Bahru, Kota Bahru</div>';">
+                                    <span class="text-[11px] text-slate-400 font-medium block mt-2">Figure: West Malaysia Resident Representatives Distribution</span>
+                                </div>
+
+                                <div class="space-y-2.5 text-xs">
+                                    <div class="bg-white/10 p-3 rounded-xl border border-white/10">
+                                        <strong class="text-white block text-sm">Klang HQ (Central Region)</strong>
+                                        <span class="text-slate-300">No. 10, Level 1, Lorong Tiara 1A, Bandar Baru Klang, 41150 Klang</span>
+                                    </div>
+                                    <div class="bg-white/10 p-2.5 rounded-xl border border-white/10 flex justify-between items-center">
+                                        <strong class="text-white">Butterworth</strong>
+                                        <span class="text-slate-300">Penang State</span>
+                                    </div>
+                                    <div class="bg-white/10 p-2.5 rounded-xl border border-white/10 flex justify-between items-center">
+                                        <strong class="text-white">Alor Star & Sungai Petani</strong>
+                                        <span class="text-slate-300">Kedah & Perlis States</span>
+                                    </div>
+                                    <div class="bg-white/10 p-2.5 rounded-xl border border-white/10 flex justify-between items-center">
+                                        <strong class="text-white">Ipoh</strong>
+                                        <span class="text-slate-300">Perak State</span>
+                                    </div>
+                                    <div class="bg-white/10 p-2.5 rounded-xl border border-white/10 flex justify-between items-center">
+                                        <strong class="text-white">Johor Bahru</strong>
+                                        <span class="text-slate-300">Johor State</span>
+                                    </div>
+                                    <div class="bg-white/10 p-2.5 rounded-xl border border-white/10 flex justify-between items-center">
+                                        <strong class="text-white">Kota Bahru</strong>
+                                        <span class="text-slate-300">Kelantan State</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tomorrow and Beyond with tom&beymap.png -->
+                        <div class="bg-slate-50 p-8 rounded-2xl border border-custom space-y-6 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex items-center space-x-2">
+                                        <span class="w-8 h-8 rounded-lg bg-primary-red-light text-primary-red flex items-center justify-center text-sm font-bold"><i class="fa-solid fa-building-columns"></i></span>
+                                        <h3 class="text-xl font-bold text-primary-blue">Tomorrow & Beyond</h3>
+                                    </div>
+                                    <span class="text-[11px] bg-secondary-blue text-white font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Expansion</span>
+                                </div>
+                                <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                                    We aim to be one of the leading service providers in the Malaysian Insurance Loss Adjusting Industry with plans in progress to open additional resident representative offices operating from the following major towns at no cost to our Principals:
+                                </p>
+
+                                <!-- Tomorrow & Beyond Map Graphic with tom&beymap.png -->
+                                <div class="rounded-xl overflow-hidden border border-custom bg-white p-3 mb-6 text-center shadow-inner">
+                                    <img src="tom&beymap.png" alt="Tomorrow and Beyond Expansion Map" class="w-full max-h-96 object-contain rounded-lg mx-auto shadow-sm" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'py-12 text-slate-400 text-xs italic\'><i class=\'fa-solid fa-map-location text-3xl mb-2 block text-secondary-blue\'></i>Tomorrow & Beyond Target Expansion: Batu Pahat, Melaka, Seremban, Temerloh, Kuala Terengganu</div>';">
+                                    <span class="text-[11px] text-slate-500 font-medium block mt-2">Figure: Planned Expansion Towns Across West Malaysia</span>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-3 text-xs">
+                                    <div class="p-3 bg-white rounded-xl border border-custom">
+                                        <strong class="text-primary-blue block">Batu Pahat</strong>
+                                        <span class="text-slate-500">Northern Johor</span>
+                                    </div>
+                                    <div class="p-3 bg-white rounded-xl border border-custom">
+                                        <strong class="text-primary-blue block">Melaka</strong>
+                                        <span class="text-slate-500">Melaka State</span>
+                                    </div>
+                                    <div class="p-3 bg-white rounded-xl border border-custom">
+                                        <strong class="text-primary-blue block">Seremban</strong>
+                                        <span class="text-slate-500">Negeri Sembilan</span>
+                                    </div>
+                                    <div class="p-3 bg-white rounded-xl border border-custom">
+                                        <strong class="text-primary-blue block">Temerloh</strong>
+                                        <span class="text-slate-500">Pahang State</span>
+                                    </div>
+                                    <div class="p-3 bg-white rounded-xl border border-custom col-span-2">
+                                        <strong class="text-primary-blue block">Kuala Terengganu</strong>
+                                        <span class="text-slate-500">Terengganu State</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pt-4 border-t border-slate-200">
+                                <a href="A-29. Corporate Profile PASB (2024).pdf" download="A-29. Corporate Profile PASB (2024).pdf" target="_blank" class="btn-red w-full py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider text-center block">
+                                    <i class="fa-solid fa-file-pdf mr-1"></i> Review Branch Network in Full Profile
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TAB 7: MANAGEMENT & DIRECTORY ================= -->
+        <section id="view-team" class="view-panel hidden py-14">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                <!-- Management Profiles -->
+                <div class="bg-white rounded-3xl border border-custom shadow-sm p-8 sm:p-12 space-y-10">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-6">
+                        <div>
+                            <span class="text-xs font-bold text-primary-red uppercase tracking-widest bg-primary-red-light px-3 py-1 rounded-full border border-red-200">Leadership</span>
+                            <h2 class="text-3xl sm:text-4xl font-extrabold text-primary-blue mt-3">Our Management Team</h2>
+                            <p class="text-slate-600 mt-2 text-base">Decades of specialized acumen delivering service excellence in claims adjustment.</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="inline-flex items-center gap-1.5 text-xs font-extrabold text-primary-red uppercase tracking-wider bg-slate-50 px-3.5 py-1.5 rounded-full border border-slate-200">
+                                <i class="fa-solid fa-award"></i> In Pursuit of Service Excellence
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Shanmugam -->
+                        <div class="bg-slate-50 rounded-2xl border border-custom p-6 space-y-4 hover:border-brand-red transition">
+                            <div class="w-14 h-14 rounded-2xl bg-primary-blue text-white flex items-center justify-center font-black text-2xl shadow">
+                                S
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg text-primary-blue">SHANMUGAM</h3>
+                                <p class="text-xs font-bold text-primary-red tracking-wide uppercase">Chief Executive Officer</p>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Vast working experience in the Loss Adjusting Industry starting in 1972 with MALAYSIAN SERVICE. Shan is an expert in handling claims, frequently consulted by Principals and Solicitors on complicated and specialized matters.
+                            </p>
+                            <span class="text-[11px] font-bold text-primary-blue block pt-2 border-t border-slate-200">Career Adjuster Since 1972</span>
+                        </div>
+
+                        <!-- Shooria -->
+                        <div class="bg-slate-50 rounded-2xl border border-custom p-6 space-y-4 hover:border-brand-blue transition">
+                            <div class="w-14 h-14 rounded-2xl bg-secondary-blue text-white flex items-center justify-center font-black text-2xl shadow">
+                                S
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg text-primary-blue">SHOORIA</h3>
+                                <p class="text-xs font-bold text-secondary-blue tracking-wide uppercase">Director & Operation Manager</p>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Over a decade of experience specializing in fraudulent and suspicious claims. Officer in charge of the O.D.I division, leads the surveillance taskforce, and appears in court to minimize principal quantum. Holds ICCILA and DMII Certificates.
+                            </p>
+                            <span class="text-[11px] font-bold text-primary-blue block pt-2 border-t border-slate-200">ICCILA & DMII Certified</span>
+                        </div>
+
+                        <!-- Sinnadurai -->
+                        <div class="bg-slate-50 rounded-2xl border border-custom p-6 space-y-4 hover:border-brand-red transition">
+                            <div class="w-14 h-14 rounded-2xl bg-primary-blue text-white flex items-center justify-center font-black text-2xl shadow">
+                                S
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg text-primary-blue">SINNADURAI F.C.C.A</h3>
+                                <p class="text-xs font-bold text-primary-red tracking-wide uppercase">Director (Finance & Admin)</p>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Accountant holding F.C.C.A (Britain), ICCILA, and DMII from the Malaysian Insurance Institute. Oversees finance, internal controls, and heads the adjuster continuous training curriculum.
+                            </p>
+                            <span class="text-[11px] font-bold text-primary-blue block pt-2 border-t border-slate-200">F.C.C.A (Britain)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Corporate Directory (Secretary, Auditors, Solicitors, Bankers) -->
+                <div class="bg-white rounded-3xl border border-custom shadow-sm p-8 sm:p-12 space-y-8">
+                    <div>
+                        <span class="text-xs font-bold text-primary-red uppercase tracking-widest bg-primary-red-light px-3 py-1 rounded-full border border-red-200">Governance</span>
+                        <h3 class="text-2xl font-bold text-primary-blue mt-3">Corporate Directory & Professional Advisors</h3>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-xs">
+                        <div class="p-5 bg-slate-50 rounded-xl border border-custom space-y-2">
+                            <p class="font-bold text-primary-red uppercase tracking-wider text-[11px]">Company Secretary</p>
+                            <p class="font-bold text-primary-blue text-sm">Tersaim Lall A/L Sandhu Ram</p>
+                            <p class="text-slate-600">No. 17-3, Jalan PJS 8/12, Dataran Mentari, 46150 Petaling Jaya, Selangor.</p>
+                        </div>
+
+                        <div class="p-5 bg-slate-50 rounded-xl border border-custom space-y-2">
+                            <p class="font-bold text-secondary-blue uppercase tracking-wider text-[11px]">Solicitors</p>
+                            <p class="font-bold text-primary-blue text-sm">M/s S. Rani & Associates</p>
+                            <p class="text-slate-600">No. 31-1, 1st Floor, Jalan Tiara 2B, Bandar Baru Klang, 41150 Klang, Selangor.</p>
+                        </div>
+
+                        <div class="p-5 bg-slate-50 rounded-xl border border-custom space-y-2">
+                            <p class="font-bold text-primary-red uppercase tracking-wider text-[11px]">Auditors</p>
+                            <p class="font-bold text-primary-blue text-sm">M/s Shan & Co</p>
+                            <p class="text-slate-600">No. 59, Jalan Thambipillai, 50470 Brickfields, Kuala Lumpur.</p>
+                        </div>
+
+                        <div class="p-5 bg-slate-50 rounded-xl border border-custom space-y-2">
+                            <p class="font-bold text-secondary-blue uppercase tracking-wider text-[11px]">Principal Bankers</p>
+                            <ul class="text-slate-700 font-medium space-y-1">
+                                <li>• Bank Islam Malaysia Bhd.</li>
+                                <li>• CIMB Bank Bhd.</li>
+                                <li>• Maybank Bank Bhd.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TAB 8: PRINCIPALS ================= -->
+        <section id="view-principals" class="view-panel hidden py-14">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white rounded-3xl border border-custom shadow-sm p-8 sm:p-12 space-y-10">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-6">
+                        <div>
+                            <span class="text-xs font-bold text-primary-red uppercase tracking-widest bg-primary-red-light px-3 py-1 rounded-full border border-red-200">Our Esteemed Clients</span>
+                            <h2 class="text-3xl sm:text-4xl font-extrabold text-primary-blue mt-3">Principals Served By Us</h2>
+                            <p class="text-slate-600 mt-2 text-base">Trusted by leading general insurance corporations and takaful operators across Malaysia.</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="inline-flex items-center gap-1.5 text-xs font-extrabold text-primary-red uppercase tracking-wider bg-slate-50 px-3.5 py-1.5 rounded-full border border-slate-200">
+                                <i class="fa-solid fa-award"></i> In Pursuit of Service Excellence
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-slate-50 rounded-2xl border border-custom p-6 flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary-red text-white rounded-xl flex items-center justify-center font-bold text-sm shadow">01</div>
+                            <div>
+                                <h4 class="font-bold text-primary-blue">AIG INSURANCE BERHAD</h4>
+                                <span class="text-xs text-slate-500">General Insurance Principal</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 rounded-2xl border border-custom p-6 flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-secondary-blue text-white rounded-xl flex items-center justify-center font-bold text-sm shadow">02</div>
+                            <div>
+                                <h4 class="font-bold text-primary-blue">GENERALI INSURANCE MALAYSIA BHD</h4>
+                                <span class="text-xs text-slate-500">General Insurance Principal</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 rounded-2xl border border-custom p-6 flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary-red text-white rounded-xl flex items-center justify-center font-bold text-sm shadow">03</div>
+                            <div>
+                                <h4 class="font-bold text-primary-blue">GREAT EASTERN GENERAL INSURANCE BHD</h4>
+                                <span class="text-xs text-slate-500">General Insurance Principal</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 rounded-2xl border border-custom p-6 flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-secondary-blue text-white rounded-xl flex items-center justify-center font-bold text-sm shadow">04</div>
+                            <div>
+                                <h4 class="font-bold text-primary-blue">PACIFIC & ORIENT INSURANCE CO. BHD</h4>
+                                <span class="text-xs text-slate-500">General Insurance Principal</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 rounded-2xl border border-custom p-6 flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary-red text-white rounded-xl flex items-center justify-center font-bold text-sm shadow">05</div>
+                            <div>
+                                <h4 class="font-bold text-primary-blue">TUNE INSURANCE BERHAD</h4>
+                                <span class="text-xs text-slate-500">General Insurance Principal</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 rounded-2xl border border-custom p-6 flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-secondary-blue text-white rounded-xl flex items-center justify-center font-bold text-sm shadow">06</div>
+                            <div>
+                                <h4 class="font-bold text-primary-blue">ZURICH GENERAL INSURANCE MALAYSIA BHD</h4>
+                                <span class="text-xs text-slate-500">General Insurance Principal</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 rounded-2xl border border-custom p-6 flex items-center space-x-4 sm:col-span-2 lg:col-span-1">
+                            <div class="w-12 h-12 bg-primary-blue text-white rounded-xl flex items-center justify-center font-bold text-sm shadow">07</div>
+                            <div>
+                                <h4 class="font-bold text-primary-blue">ZURICH TAKAFUL MALAYSIA BERHAD</h4>
+                                <span class="text-xs text-slate-500">Takaful Operator Principal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TAB 9: CONTACT & DOWNLOAD ================= -->
+        <section id="view-contact" class="view-panel hidden py-14">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white rounded-3xl border border-custom shadow-sm p-8 sm:p-12 space-y-12">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-6">
+                        <div>
+                            <span class="text-xs font-bold text-primary-red uppercase tracking-widest bg-primary-red-light px-3 py-1 rounded-full border border-red-200">Communication</span>
+                            <h2 class="text-3xl sm:text-4xl font-extrabold text-primary-blue mt-3">Contact Klang Headquarters</h2>
+                            <p class="text-slate-600 mt-2 text-base">Direct line for assignments, loss adjustments, and corporate profile downloads.</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="inline-flex items-center gap-1.5 text-xs font-extrabold text-primary-red uppercase tracking-wider bg-slate-50 px-3.5 py-1.5 rounded-full border border-slate-200">
+                                <i class="fa-solid fa-award"></i> In Pursuit of Service Excellence
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                        <!-- Direct Details -->
+                        <div class="bg-primary-blue text-white rounded-2xl p-8 space-y-6">
+                            <h3 class="text-xl font-bold text-primary-red-light">Corporate Contact Information</h3>
+                            
+                            <div class="space-y-4 text-xs sm:text-sm">
+                                <div class="flex items-start space-x-3">
+                                    <i class="fa-solid fa-location-dot text-primary-red mt-1 text-base"></i>
+                                    <div>
+                                        <strong class="block text-white mb-0.5">Head Office Address</strong>
+                                        <p class="text-slate-300 leading-relaxed">
+                                            No. 10, Level 1, Lorong Tiara 1A,<br>
+                                            Bandar Baru Klang, 41150 Klang, Selangor, Malaysia.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-3">
+                                    <i class="fa-solid fa-phone text-primary-red mt-1 text-base"></i>
+                                    <div>
+                                        <strong class="block text-white mb-0.5">Telephone Numbers</strong>
+                                        <p class="text-slate-300 font-mono">03-33434700 / 03-33624700 / 012-3788914</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-3">
+                                    <i class="fa-solid fa-fax text-primary-red mt-1 text-base"></i>
+                                    <div>
+                                        <strong class="block text-white mb-0.5">Fax Number</strong>
+                                        <p class="text-slate-300 font-mono">03-33434700</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-3">
+                                    <i class="fa-solid fa-envelope text-primary-red mt-1 text-base"></i>
+                                    <div>
+                                        <strong class="block text-white mb-0.5">Corporate Emails</strong>
+                                        <p class="text-primary-red-light font-medium">admin@progressiveadjusters.com.my</p>
+                                        <p class="text-primary-red-light font-medium">pasb@progressiveadjusters.com.my</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pt-4 border-t border-white/10 space-y-3">
+                                <!-- WhatsApp Instant Action -->
+                                <a href="https://wa.me/60123788914?text=Hello%20Progressive%20Adjustment%20Sdn%20Bhd,%20I%20would%20like%20to%20make%20an%20inquiry." target="_blank" rel="noopener noreferrer" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-4 rounded-xl text-center block text-xs tracking-wider uppercase transition shadow-lg">
+                                    <i class="fa-brands fa-whatsapp text-base mr-1"></i> Communicate Instantly on WhatsApp
+                                </a>
+                                <!-- Direct Download Action -->
+                                <a href="A-29. Corporate Profile PASB (2024).pdf" download="A-29. Corporate Profile PASB (2024).pdf" class="btn-red font-bold py-3.5 px-4 rounded-xl text-center block text-xs tracking-wider uppercase shadow-lg">
+                                    <i class="fa-solid fa-file-pdf mr-1"></i> Download Company Profile (PDF)
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Assignment Enquiry Form -->
+                        <div class="bg-slate-50 rounded-2xl border border-custom p-8">
+                            <h3 class="text-xl font-bold text-primary-blue mb-4">Send an Assignment / Inquiry</h3>
+                            <form onsubmit="handleContact(event)" class="space-y-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Your Name / Organization</label>
+                                    <input type="text" required placeholder="e.g. Encik Farhan (Zurich Claims)" class="w-full text-xs p-3 rounded-lg border border-custom focus:ring-1 focus:ring-primary-blue focus:outline-none bg-white">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Email Address</label>
+                                    <input type="email" required placeholder="claims@principal.com.my" class="w-full text-xs p-3 rounded-lg border border-custom focus:ring-1 focus:ring-primary-blue focus:outline-none bg-white">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Subject / Claim Reference</label>
+                                    <input type="text" required placeholder="e.g. TPBI Verification - File Ref: 2026/PASB/098" class="w-full text-xs p-3 rounded-lg border border-custom focus:ring-1 focus:ring-primary-blue focus:outline-none bg-white">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Message Details</label>
+                                    <textarea rows="4" required placeholder="Provide brief instructions or details regarding the loss adjustment assignment..." class="w-full text-xs p-3 rounded-lg border border-custom focus:ring-1 focus:ring-primary-blue focus:outline-none bg-white"></textarea>
+                                </div>
+                                <button type="submit" class="btn-red w-full py-3 rounded-lg text-xs font-bold uppercase tracking-wider">
+                                    Submit Assignment Instruction
+                                </button>
+                            </form>
+                            <div id="form-feedback" class="hidden mt-4 p-3 bg-emerald-50 text-emerald-800 rounded-lg text-xs border border-emerald-200">
+                                Thank you. Your message has been received. Our Klang office will contact you promptly.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Standardized Corporate Footer -->
+    <footer class="bg-primary-blue text-white border-t border-slate-700 mt-16">
+        <!-- Footer Motto Callout Band -->
+        <div class="bg-secondary-blue/80 border-b border-slate-700/80 py-4">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between text-center sm:text-left gap-2">
+                <div class="flex items-center space-x-2 text-amber-400 font-black text-xs uppercase tracking-widest">
+                    <i class="fa-solid fa-award text-base text-primary-red"></i>
+                    <span>Official Motto</span>
+                </div>
+                <div class="text-base sm:text-lg font-black tracking-widest text-white uppercase">
+                    "IN PURSUIT OF SERVICE EXCELLENCE"
+                </div>
+                <div class="text-xs text-slate-300">
+                    Trusted Since 1972
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-xs">
+                <!-- Col 1: Brand Info with logo.png -->
+                <div class="space-y-3 md:col-span-2">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-white rounded-lg p-1 flex items-center justify-center shadow-md flex-shrink-0">
+                            <img src="logo.png" alt="PASB Logo" class="w-full h-full object-contain" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-primary-red flex items-center justify-center text-white font-bold text-xs\'>PA</div>';">
+                        </div>
+                        <span class="font-extrabold text-base tracking-tight text-white">PROGRESSIVE ADJUSTMENT SDN. BHD.</span>
+                    </div>
+                    <p class="text-slate-300 leading-relaxed max-w-sm">
+                        Incorporated on 31st May 1982 (Registration: 198301012001 / 107394-K). Licensed by Bank Negara Malaysia & Ministry of Home Affairs. Operating continuously in Malaysia since 1972.
+                    </p>
+                    <div class="inline-flex items-center gap-1.5 text-xs font-bold text-red-300 bg-red-950/60 px-3 py-1 rounded-full border border-red-500/30 uppercase tracking-wider">
+                        <i class="fa-solid fa-award text-amber-400"></i>
+                        <span>Motto: In Pursuit of SERVICE EXCELLENCE</span>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation -->
+                <div class="space-y-2">
+                    <h4 class="font-bold text-white uppercase tracking-wider text-sm mb-3">Quick Links</h4>
+                    <ul class="space-y-1.5 text-slate-300">
+                        <li><button onclick="switchTab('home')" class="hover:text-primary-red-light transition">Home</button></li>
+                        <li><button onclick="switchTab('partnership')" class="hover:text-primary-red-light transition">Partnership</button></li>
+                        <li><button onclick="switchTab('about')" class="hover:text-primary-red-light transition">About Us</button></li>
+                        <li><button onclick="switchTab('services')" class="hover:text-primary-red-light transition">Services</button></li>
+                        <li><button onclick="switchTab('flowchart')" class="hover:text-primary-red-light transition">TPBI Flowchart</button></li>
+                        <li><button onclick="switchTab('principals')" class="hover:text-primary-red-light transition">Principals</button></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Direct Actions -->
+                <div class="space-y-3">
+                    <h4 class="font-bold text-white uppercase tracking-wider text-sm mb-3">Documents & Contact</h4>
+                    <a href="A-29. Corporate Profile PASB (2024).pdf" download="A-29. Corporate Profile PASB (2024).pdf" class="btn-pdf-download block py-2 px-3 rounded-lg text-center font-bold">
+                        <i class="fa-solid fa-file-pdf mr-1"></i> Download Profile (PDF)
+                    </a>
+                    <a href="https://wa.me/60123788914?text=Hello%20Progressive%20Adjustment%20Sdn%20Bhd,%20I%20would%20like%20to%20make%20an%20inquiry." target="_blank" rel="noopener noreferrer" class="bg-emerald-600 hover:bg-emerald-700 text-white block py-2 px-3 rounded-lg text-center font-bold transition">
+                        <i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp Helpline
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-700 pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-400">
+                <p>&copy; 2026 Progressive Adjustment Sdn. Bhd. (107394-K). All rights reserved. • In Pursuit of Service Excellence</p>
+                <p class="mt-2 sm:mt-0">Head Office: No. 10, Level 1, Lorong Tiara 1A, Bandar Baru Klang, 41150 Klang, Selangor</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tab Switching & Interaction Logic -->
+    <script>
+        function switchTab(viewId) {
+            // Hide all views
+            const panels = document.querySelectorAll('.view-panel');
+            panels.forEach(p => p.classList.add('hidden'));
+
+            // Show chosen view
+            const activeView = document.getElementById('view-' + viewId);
+            if (activeView) {
+                activeView.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Update navigation tab highlights
+            const navTabs = document.querySelectorAll('.nav-tab');
+            navTabs.forEach(tab => {
+                if (tab.getAttribute('data-target') === viewId) {
+                    tab.classList.add('active');
+                    tab.classList.remove('hover:bg-slate-100');
+                } else {
+                    tab.classList.remove('active');
+                    tab.classList.add('hover:bg-slate-100');
+                }
+            });
+        }
+
+        function toggleMobileNav() {
+            const nav = document.getElementById('mobile-nav');
+            nav.classList.toggle('hidden');
+        }
+
+        function handleContact(e) {
+            e.preventDefault();
+            const feedback = document.getElementById('form-feedback');
+            feedback.classList.remove('hidden');
+            e.target.reset();
+            setTimeout(() => {
+                feedback.classList.add('hidden');
+            }, 6000);
+        }
+    </script>
+</body>
+</html>
